@@ -16,15 +16,16 @@ INSERT INTO books (title, price, author_id) VALUES
   ('The Name of the Wind', 24.00, 4),
   ('Dawn: Xenogenesis, Book 1', 18.00, 5);
 
+-- notice the dates
 INSERT INTO customers (name, member_since) VALUES
   ('Stephen Turley', 'Sep-13-2001'),
   ('Paul Beyer', '11/18/2007');
 
-INSERT INTO orders (id, customer_id, shipping_label) VALUES
-  (1, 1, '{"carrier": "USPS", "Street": "123 Somewhere", "State": "Ohio"}'),
-  (2, 1, '{"carrier": "FedEx", "Street": "123 Somewhere", "State": "Ohio"}'),
-  (3, 1, '{"carrier": "UPS", "Street": "456 Another Place", "State": "Ohio"}'),
-  (4, 1, '{"carrier": "USPS", "Street": "456 Another Place", "State": "Ohio"}');
+INSERT INTO orders (id, customer_id, shipped, shipping_label) VALUES
+  (1, 1, true, '{"carrier": "USPS", "Street": "123 Somewhere", "State": "Ohio"}'),
+  (2, 1, true, '{"carrier": "FedEx", "Street": "123 Somewhere", "State": "Ohio"}'),
+  (3, 1, true, '{"carrier": "UPS", "Street": "456 Another Place", "State": "Ohio"}'),
+  (4, 1, false,'{"carrier": "USPS", "Street": "456 Another Place", "State": "Ohio"}');
 
 INSERT INTO books_ordered (book_id, order_id) VALUES
   (1, 1),

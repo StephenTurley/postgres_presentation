@@ -4,7 +4,7 @@ CREATE SCHEMA public;
 CREATE TABLE IF NOT EXISTS books(
   id SERIAL PRIMARY KEY NOT NULL,
   title TEXT,
-  price MONEY,
+  price MONEY, -- money column, neat
   author_id INT
 );
 
@@ -22,7 +22,8 @@ CREATE TABLE IF NOT EXISTS customers(
 CREATE TABLE IF NOT EXISTS orders(
   id SERIAL PRIMARY KEY NOT NULL,
   shipping_label JSONB,
-  customer_id INT
+  customer_id INT,
+  shipped boolean
 );
 
 CREATE TABLE IF NOT EXISTS books_ordered(
