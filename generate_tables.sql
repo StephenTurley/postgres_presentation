@@ -1,3 +1,6 @@
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
 CREATE TABLE IF NOT EXISTS books(
   id SERIAL PRIMARY KEY  NOT NULL,
   title TEXT,
@@ -47,3 +50,11 @@ ALTER TABLE orders
   FOREIGN KEY (customer_id)
   REFERENCES customers(id);
 
+CREATE UNIQUE INDEX customer_name
+  on customers(name);
+
+CREATE UNIQUE INDEX author_name
+  on authors(name);
+
+CREATE UNIQUE INDEX book_title
+  on books(title);
