@@ -1,5 +1,6 @@
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
+CREATE EXTENSION pg_trgm;
 
 CREATE TABLE IF NOT EXISTS books(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -19,9 +20,12 @@ CREATE TABLE IF NOT EXISTS customers(
   member_since DATE
 );
 
+CREATE DOMAIN shipping_label AS
+  JSONB NOT NULL CHECK (value ? 'carrier');
+
 CREATE TABLE IF NOT EXISTS orders(
   id SERIAL PRIMARY KEY NOT NULL,
-  shipping_label JSONB,
+  shipping_label shipping_label,
   customer_id INT,
   shipped boolean
 );
