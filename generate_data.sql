@@ -33,3 +33,7 @@ INSERT INTO books_ordered (book_id, order_id) VALUES
   (4, 3),
   (6, 4);
 
+INSERT INTO reviews (text, customer_id, book_id) VALUES
+  ('This is the best damn book I''ve ever read. It literally changed my life', 1, 1),
+  ('What an interesting story... that, umm, love scene though... wtf', 2, 9),
+  ('Just terrible... save your money.', 1, 4);
