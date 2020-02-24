@@ -1,8 +1,15 @@
 version: '3'
 services:
   postgres:
-    image: postgres
+    image: postgres-fdw
     environment:
       - POSTGRES_PASSWORD=secret
     ports: 
       - 5432:5432
+  neo4j:
+    image: neo4j:3.5.14
+    environment:
+      - NEO4J_AUTH=none
+    ports: 
+      - 7474:7474
+      - 7687:7687
