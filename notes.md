@@ -6,4 +6,4 @@
 
 
 ## Sources
- - (jsonb vs json)[https://stackoverflow.com/questions/22654170/explanation-of-jsonb-introduced-by-postgresql]
+ - [jsonb vs json](https://stackoverflow.com/questions/22654170/explanation-of-jsonb-introduced-by-postgresql)
